@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Calculadora - Ecolixo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+/* CORES */
+:root{
+  --verde:#00c853;
+  --verde-hover:#00e676;
+  --bg:#0a0a0a;
+  --card:#1a1a1a;
+  --header:#111;
+}
+
+/* BODY */
+body{
+  background:var(--bg);
+  color:white;
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 50px;
+  background:var(--header);
+  border-bottom:1px solid rgba(0,200,83,0.3);
+  font-size: 15px; ;
+}
+
+.logo{
+  height:150px;
+  display:flex;
+  align-items:center;
+}
+
+.logo img{
+  height:100%;
+  max-width:200px;
+  object-fit:contain;
+}
+
+/* NAV */
+nav{
+  display:flex;
+  gap:20px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  position:relative;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  width:0%;
+  height:2px;
+  bottom:-5px;
+  left:0;
+  background:var(--verde);
+  transition:0.3s;
+}
+
+nav a:hover, .ativo{
+  color:#00c853;
+}
+
+
+nav a:hover{
+  color:var(--verde);
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:60px 20px;
+}
+
+.hero h1{
+  font-size:40px;
+  margin-bottom:20px;
+}
+
+.hero p{
+  max-width:700px;
+  margin:auto;
+  color:#ccc;
+}
+
+/* CALCULADORA */
+.calculadora{
+  background:var(--card);
+  max-width:600px;
+  margin:40px auto;
+  padding:40px;
+  border-radius:20px;
+  border:1px solid rgba(0,200,83,0.3);
+
+  display:grid;
+  gap:20px;
+}
+
+.calculadora h2{
+  color:var(--verde);
+  text-align:center;
+}
+
+.calculadora input{
+  padding:15px;
+  border:none;
+  border-radius:12px;
+  background:#222;
+  color:white;
+  outline:none;
+  font-size:16px;
+}
+
+.calculadora input:focus{
+  border:1px solid var(--verde);
+}
+
+.calculadora button{
+  padding:15px;
+  border:none;
+  border-radius:12px;
+  background:var(--verde);
+  color:black;
+  font-weight:bold;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.calculadora button:hover{
+  background:var(--verde-hover);
+  transform:scale(1.03);
+}
+
+/* RESULTADO */
+.resultado{
+  margin-top:20px;
+  padding:20px;
+  border-radius:15px;
+  background:#111;
+  border:1px solid rgba(0,200,83,0.3);
+  text-align:center;
+  font-size:20px;
+  color:var(--verde);
+  display:none;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:var(--header);
+  margin-top:50px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+  <div class="logo">
+    <img src="../imagem logo 2.0.png" alt="Logo">
+  </div>
+
+  <nav>
+    <a href="../index.html">Início</a>
+    <a href="./obsolescencia.html">Obsolescência</a>
+    <a href="./formulario.html">Formulario</a>
+    <a href="./reciclagem.html">Reciclagem</a>
+    <a href="./ldpage.html">Conversa</a>
+    <a href="./calculo.html" class="ativo">Calculadora</a>
+    <a href="./membros.html">Nossa Equipe</a>
+  </nav>
+
+</header>
+
+<section class="hero">
+
+  <h1>♻️ Calculadora de Lixo Eletrônico</h1>
+
+  <p>
+    Descubra quanto lixo eletrônico pode ser gerado pelos seus aparelhos antigos.
+  </p>
+
+</section>
+
+<section class="calculadora">
+
+  <h2>Faça o cálculo</h2>
+
+  <input 
+    type="number" 
+    id="celulares"
+    placeholder="Quantidade de celulares antigos"
+  >
+
+  <button onclick="calcularLixo()">
+    Calcular Impacto
+  </button>
+
+  <div class="resultado" id="resultado"></div>
+
+</section>
+
+<footer>
+  Projeto Ecolixo © 2026
+</footer>
+
+<script>
+
+function calcularLixo(){
+
+  let celulares =
+  document.getElementById("celulares").value;
+
+  if(celulares === ""){
+
+    alert("Digite uma quantidade!");
+
+    return;
+  }
+
+  let peso = celulares * 150;
+
+  let resultado =
+  document.getElementById("resultado");
+
+  resultado.style.display = "block";
+
+  resultado.innerHTML =
+  "📱 " + celulares +
+  " celulares podem gerar aproximadamente <br><br>" +
+
+  "♻️ " + peso +
+  " gramas de lixo eletrônico.";
+
+}
+
+</script>
+
+</body>
+</html>

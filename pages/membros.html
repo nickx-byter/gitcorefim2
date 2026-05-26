@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossa Equipe - Ecolixo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* BODY */
+        body {
+            background: #0a0a0a;
+            color: #fff;
+        }
+
+        /* HEADER */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: #111;
+            font-size: 15px; ;
+        }
+
+        .logo {
+            height: 150px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 100%;
+            max-width: 200px;
+            object-fit: contain;
+        }
+
+        nav a {
+            color: white;
+            margin-left: 20px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        .ativo {
+            color: #00c853;
+        }
+
+        /* EQUIPE */
+        .equipe {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .equipe h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .subtitulo-equipe {
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        .cards-equipe {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .membro {
+            background: #1a1a1a;
+            width: 260px;
+            padding: 30px 20px;
+            border-radius: 20px;
+            transition: 0.3s;
+            border: 1px solid rgba(0, 200, 83, 0.2);
+        }
+
+        .membro:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(0, 200, 83, 0.3);
+        }
+
+        .avatar img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .membro h3 {
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .cargo {
+            color: #00c853;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .descricao {
+            color: #ccc;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        /* SOCIAL */
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .social-icons a {
+            font-size: 18px;
+            background: #0f0f0f;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: 0.3s;
+            text-decoration: none;
+            color: white;
+        }
+
+        .social-icons a:hover {
+            background: #00c853;
+            transform: scale(1.1);
+            color: black;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #111;
+            margin-top: 40px;
+            color: #aaa;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="../imagem logo 2.0.png" alt="Logo">
+    </div>
+    <nav>
+        <a href="../index.html">Início</a>
+        <a href="./obsolescencia.html">Obsolescência</a>
+        <a href="./formulario.html">Formulário</a>
+        <a href="./reciclagem.html">Reciclagem</a>
+        <a href="./ldpage.html">Conversa</a>
+        <a href="./calculo.html">Calculadora</a>
+        <a href="./membros.html" class="ativo">Nossa Equipe</a>
+    </nav>
+</header>
+
+<div class="equipe">
+    <h2>🌟 Nossa Equipe</h2>
+    <p class="subtitulo-equipe">Conheça as pessoas por trás do projeto Ecolixo</p>
+
+    <div class="cards-equipe">
+        <div class="membro">
+            <div class="avatar">
+                <img src="../joaoicon.jpeg" alt="João Vitor">
+            </div>
+            <h3>João Vitor Nogueira De Assis</h3>
+            <div class="cargo">🎨 Idealizador & Designer</div>
+            <p class="descricao">Criador do conceito Ecolixo, responsável pela experiência visual.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/joao_assis29" target="_blank">📷</a>
+            </div>
+        </div>
+
+        <div class="membro">
+            <div class="avatar">
+                <img src="../matheusicon.jpeg" alt="Matheus Nogueira">
+            </div>
+            <h3>Matheus Nogueira da Silva Lima</h3>
+            <div class="cargo">♻️ Pesquisador & Conteúdo</div>
+            <p class="descricao">Especialista em resíduos eletrônicos e informações técnicas.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/mathnogueiraa" target="_blank">📷</a>
+            </div>
+        </div>
+
+        <div class="membro">
+            <div class="avatar">
+                <img src="../nicolleicon.jpeg" alt="Nicolle Neiva">
+            </div>
+            <h3>Nicolle Neiva</h3>
+            <div class="cargo">🖥️ Desenvolvedora Front-end</div>
+            <p class="descricao">Responsável pela interface interativa do projeto.</p>
+            <div class="social-icons">
+                <a href="https://www.instagram.com/isn.nicolle" target="_blank">📷</a>
+            </div>
+        </div>
+
+        <div class="membro">
+            <div class="avatar">
+                <img src="../tomasicon.jpeg" alt="Tomas Costa">
+            </div>
+            <h3>Tomas Costa e Gloria</h3>
+            <div class="cargo">📢 Comunicação & Redes</div>
+            <p class="descricao">Divulga ações e conecta o projeto à comunidade.</p>
+            <div class="social-icons">
+                <a href="#">📷</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    Projeto Ecolixo © 2026 — Consciência ambiental
+</footer>
+
+</body>
+</html>

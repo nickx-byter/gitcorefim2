@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Reciclagem - Ecolixo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+
+<style>
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* BODY */
+body{
+  background:#0a0a0a;
+  color:#fff;
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 50px;
+  background:#111;
+  font-size: 15px; ;
+}
+
+header h1{
+  color:#00c853;
+}
+
+nav a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover, .ativo{
+  color:#00c853;
+}
+
+/* HERO */
+.hero{
+  height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+             url('https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0');
+  background-size:cover;
+}
+
+.hero-text h2{
+  font-size:40px;
+  margin-bottom:20px;
+}
+
+.hero-text p{
+  margin-bottom:20px;
+}
+
+/* STEPS */
+.steps{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:30px;
+  padding:60px;
+}
+
+.step{
+  background:#1a1a1a;
+  border-radius:15px;
+  padding:25px;
+  width:220px;
+  text-align:center;
+  border:1px solid rgba(0,200,83,0.2);
+  transition:0.3s;
+}
+
+.step:hover{
+  transform:translateY(-10px);
+  box-shadow:0 10px 25px rgba(0,200,83,0.3);
+}
+
+.step span{
+  display:inline-block;
+  width:45px;
+  height:45px;
+  background:#00c853;
+  color:black;
+  border-radius:50%;
+  line-height:45px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+/* INFO BOX */
+.info-box{
+  background:#111;
+  max-width:800px;
+  margin:30px auto;
+  padding:30px;
+  border-radius:15px;
+  border:1px solid rgba(0,200,83,0.2);
+}
+
+.info-box h3{
+  color:#00c853;
+  margin-bottom:10px;
+}
+
+.info-box ul{
+  margin-left:20px;
+  line-height:1.7;
+}
+
+/* BUTTON */
+.btn{
+  background:#00c853;
+  padding:12px 25px;
+  color:black;
+  text-decoration:none;
+  border-radius:5px;
+  display:inline-block;
+  margin-top:20px;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#00e676;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#111;
+}
+
+/* ANIMAÇÃO */
+.fade-in{
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.8s;
+}
+
+.fade-in.show{
+  opacity:1;
+  transform:translateY(0);
+}
+.logo{
+  height:150px;          /* define altura do header da logo */
+  display:flex;
+  align-items:center;
+}
+
+.logo img{
+  height:100%;          /* faz a imagem caber dentro da logo */
+  max-width:200px;      /* impede de ficar gigante na largura */
+  object-fit:contain;   /* mantém proporção */
+}
+.info-box{
+  position: relative;
+  overflow: hidden;
+}
+
+.localizacao-box{
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 150px;
+  opacity: 0.08;
+  color: #00c853;
+  pointer-events: none;
+
+  animation: pulse 2s infinite;
+}
+
+.info-box{
+  position: relative;
+  overflow: hidden;
+}
+
+.localizacao-box{
+  position: absolute;
+
+  right: 40px;   /* move pra direita */
+  top: 55%;      /* centraliza vertical */
+  
+  transform: translateY(-50%);
+
+  opacity: 0.40;
+
+  animation: pulse 2s infinite;
+}
+
+.localizacao-box img{
+  width: 220px; /* tamanho da imagem */
+}
+
+@keyframes pulse{
+  0%{
+    transform: translateY(-50%) scale(1);
+  }
+
+  50%{
+    transform: translateY(-50%) scale(1.05);
+  }
+
+  100%{
+    transform: translateY(-50%) scale(1);
+  }
+}
+.modal-mapa{
+  position: fixed;
+  inset: 0;
+
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(8px);
+
+  display: none;
+
+  align-items: center;
+  justify-content: center;
+
+  z-index: 9999;
+}
+
+.conteudo-mapa{
+  position: relative;
+
+  width: 90%;
+  max-width: 900px;
+
+  background: #111;
+
+  border: 2px solid #00c853;
+  border-radius: 25px;
+
+  padding: 30px;
+
+  box-shadow: 0 0 30px rgba(0,200,83,0.3);
+
+  animation: aparecer 0.3s ease;
+}
+
+.conteudo-mapa h2{
+  color: #00c853;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.fechar-mapa{
+  position: absolute;
+
+  top: 15px;
+  right: 15px;
+
+  width: 40px;
+  height: 40px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #222;
+  color: white;
+
+  font-size: 20px;
+
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+
+.fechar-mapa:hover{
+  background: #ff4444;
+  transform: rotate(90deg);
+}
+
+@keyframes aparecer{
+  from{
+    opacity: 0;
+    transform: scale(0.9);
+  }
+
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="../imagem logo 2.0.png" alt="Logo">
+  </div>
+  <nav>
+    <a href="../index.html">Início</a>
+    <a href="./obsolescencia.html">Obsolescência</a>
+      <a href="./formulario.html">Formulário</a>
+    <a href="./reciclagem.html" class="ativo">Reciclagem</a>
+    <a href="./ldpage.html">Conversa</a>
+    <a href="./calculo.html">Calculadora</a>
+    <a href="./membros.html">Nossa Equipe</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text fade-in">
+    <h2>♻️ Reciclagem Eletrônica</h2>
+    <p>Transforme lixo em recurso e reduza impactos ambientais com descarte correto.</p>
+  </div>
+</section>
+
+<section class="steps">
+  <div class="step fade-in">
+    <span>1</span>
+    <h3>Coleta</h3>
+    <p>Pontos de coleta recebem eletrônicos usados.</p>
+  </div>
+
+  <div class="step fade-in">
+    <span>2</span>
+    <h3>Triagem</h3>
+    <p>Separação de peças e materiais recicláveis.</p>
+  </div>
+
+  <div class="step fade-in">
+    <span>3</span>
+    <h3>Trituração</h3>
+    <p>Materiais são triturados e separados.</p>
+  </div>
+
+  <div class="step fade-in">
+    <span>4</span>
+    <h3>Refino</h3>
+    <p>Metais como ouro e cobre são reaproveitados.</p>
+  </div>
+</section>
+
+<section class="info-box fade-in">
+
+  <div style="font-size:60px; margin-bottom:15px;">
+  </div>
+
+  <h3>🔋 Benefícios</h3>
+
+  <ul>
+    <li>Reduz extração de recursos naturais</li>
+    <li>Gera empregos sustentáveis</li>
+    <li>Evita contaminação do solo e água</li>
+    <li>Reaproveita materiais raros</li>
+  </ul>
+
+  <a class="btn" onclick="abrirMapa()">
+   Encontrar pontos de coleta
+</a>
+  <div class="localizacao-box">
+  <img src="../local.png" alt="local img">
+</div>
+
+</section>
+
+<footer>
+  Projeto Ecolixo © 2026
+</footer>
+
+<script>
+const elements = document.querySelectorAll('.fade-in');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const pos = el.getBoundingClientRect().top;
+    if(pos < window.innerHeight - 100){
+      el.classList.add('show');
+    }
+  });
+});
+
+function abrirMapa(){
+  document.getElementById("modalMapa").style.display = "flex";
+}
+
+function fecharMapa(){
+  document.getElementById("modalMapa").style.display = "none";
+}
+
+/* fechar clicando fora */
+window.addEventListener("click", function(e){
+
+  const modal = document.getElementById("modalMapa");
+
+  if(e.target === modal){
+    fecharMapa();
+  }
+
+});
+
+</script>
+<!-- POPUP MAPA -->
+<div class="modal-mapa" id="modalMapa">
+
+  <div class="conteudo-mapa">
+
+    <button class="fechar-mapa" onclick="fecharMapa()">
+      ✕
+    </button>
+
+    <h2>📍 Pontos de coleta em Belo Horizonte</h2>
+
+    <iframe
+      src="https://www.google.com/maps?q=ecoponto+belo+horizonte&output=embed"
+      width="100%"
+      height="450"
+      style="border:0; border-radius:15px;"
+      loading="lazy">
+    </iframe>
+
+  </div>
+
+</div>
+</body>
+</html>

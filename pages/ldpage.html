@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>TRASHBUCKET - Landing Page</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+/* CORES */
+:root{
+  --verde:#00c853;
+  --verde-hover:#00e676;
+  --bg:#0a0a0a;
+  --card:#161616;
+  --header:#111;
+}
+
+/* BODY */
+body{
+  background:var(--bg);
+  color:white;
+  overflow-x:hidden;
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  background:rgba(17,17,17,0.9);
+  backdrop-filter:blur(10px);
+  position:sticky;
+  top:0;
+  z-index:999;
+  border-bottom:1px solid rgba(0,200,83,0.2);
+  font-size: 15px; ;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:700;
+  color:var(--verde);
+}
+
+nav{
+  display:flex;
+  gap:25px;
+}
+
+nav a{
+  text-decoration:none;
+  color:white;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:var(--verde);
+}
+
+/* HERO */
+.hero{
+  min-height:90vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:40px;
+  background:
+  linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+  url('https://images.unsplash.com/photo-1518770660439-4636190af475');
+
+  background-size:cover;
+  background-position:center;
+}
+
+.hero-content{
+  max-width:800px;
+}
+
+.hero h1{
+  font-size:60px;
+  margin-bottom:20px;
+  color:white;
+}
+
+.hero h1 span{
+  color:var(--verde);
+}
+
+.hero p{
+  font-size:20px;
+  line-height:1.8;
+  color:#ccc;
+  margin-bottom:35px;
+}
+
+/* BOTÃO */
+.btn{
+  display:inline-block;
+  padding:15px 35px;
+  background:var(--verde);
+  color:black;
+  text-decoration:none;
+  border-radius:50px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:var(--verde-hover);
+  transform:scale(1.05);
+}
+
+/* GRID */
+.grid{
+  display:grid;
+
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+  gap:30px;
+
+  padding:80px 60px;
+}
+
+/* CARDS */
+.card{
+  background:var(--card);
+  padding:35px;
+  border-radius:20px;
+  text-align:center;
+  transition:0.3s;
+  border:1px solid rgba(0,200,83,0.2);
+}
+
+.card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 10px 30px rgba(0,200,83,0.3);
+}
+
+.card img{
+  width:100px;
+  margin-bottom:20px;
+}
+
+.card h2{
+  color:var(--verde);
+  margin-bottom:15px;
+}
+
+.card p{
+  color:#ccc;
+  line-height:1.7;
+}
+
+/* SOBRE */
+.sobre{
+  padding:80px 40px;
+  text-align:center;
+  max-width:1000px;
+  margin:auto;
+}
+
+.sobre h2{
+  font-size:40px;
+  margin-bottom:25px;
+  color:var(--verde);
+}
+
+.sobre p{
+  line-height:2;
+  color:#ccc;
+  font-size:18px;
+}
+
+/* CTA */
+.cta{
+  background:#111;
+  padding:80px 40px;
+  text-align:center;
+  margin-top:40px;
+}
+
+.cta h2{
+  font-size:45px;
+  margin-bottom:20px;
+}
+
+.cta p{
+  color:#ccc;
+  margin-bottom:30px;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:var(--header);
+}
+.logo{
+  height:150px;
+  display:flex;
+  align-items:center;
+}
+
+.logo img{
+  height:100%;
+  max-width:200px;
+  object-fit:contain;
+}
+nav a:hover, .ativo{
+  color:#00c853;
+}
+/*animaçÃo*/
+.fade-in{
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.8s;
+}
+
+.fade-in.show{
+  opacity:1;
+  transform:translateY(0);
+}
+/* ANIMAÇÃO */
+@keyframes fadeShow{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+/* FADE */
+.hero-content,
+.card,
+.sobre,
+.cta{
+  animation:fadeShow 2.2s ease;
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="logo">
+    <img src="../imagem logo 2.0.png" alt="Logo">
+  </div>
+  <nav>
+    <a href="../index.html">Início</a>
+    <a href="./obsolescencia.html">Obsolescência</a>
+     <a href="./formulario.html">Formulário</a>
+    <a href="./reciclagem.html">Reciclagem</a>
+    <a href="./ldpage.html" class="ativo">Conversa</a>
+    <a href="./calculo.html">Calculadora</a>
+    <a href="./membros.html">Nossa Equipe</a>
+  </nav>
+</header>
+
+<section class="hero">
+
+  <div class="hero-content">
+
+    <h1>
+      Tecnologia <span>Consciente</span>
+    </h1>
+
+    <p>
+      Descubra como reduzir o lixo eletrônico, combater a obsolescência programada e ajudar o planeta através da reciclagem tecnológica.
+    </p>
+
+    <a href="#" class="btn">
+      Explorar Projeto
+    </a>
+
+  </div>
+
+</section>
+
+<section class="grid">
+
+  <div class="card">
+
+    <img src="https://cdn-icons-png.flaticon.com/512/3659/3659899.png">
+
+    <h2>Obsolescência</h2>
+
+    <p>
+      Entenda como empresas reduzem a vida útil de dispositivos eletrônicos.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <img src="https://cdn-icons-png.flaticon.com/512/1041/1041916.png">
+
+    <h2>Reciclagem</h2>
+
+    <p>
+      Descubra maneiras corretas de reciclar aparelhos eletrônicos.
+    </p>
+
+  </div>
+
+  <div class="card">
+
+    <img src="https://cdn-icons-png.flaticon.com/512/2913/2913465.png">
+
+    <h2>Descarte Correto</h2>
+
+    <p>
+      Saiba onde descartar celulares, notebooks e baterias sem prejudicar o meio ambiente.
+    </p>
+
+  </div>
+
+</section>
+
+<section class="sobre">
+
+  <h2>🌍 Sobre o Projeto</h2>
+
+  <p>
+    O projeto TRASHBUCKET foi criado com o objetivo de conscientizar as pessoas sobre os impactos ambientais causados pelo descarte incorreto de aparelhos eletrônicos.
+    Nosso foco é incentivar o consumo consciente, a reutilização de dispositivos e a reciclagem sustentável para reduzir o crescimento do lixo eletrônico no planeta.
+  </p>
+
+</section>
+
+<section class="cta">
+
+  <h2>♻️ Faça Parte da Mudança</h2>
+
+  <p>
+    Pequenas atitudes podem gerar grandes impactos ambientais.
+  </p>
+
+  <a href="#" class="btn">
+    Saiba Mais
+  </a>
+
+</section>
+
+<footer>
+  Projeto Ecolixo © 2026
+</footer>
+
+</body>
+</html>

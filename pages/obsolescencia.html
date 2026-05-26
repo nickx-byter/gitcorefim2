@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Obsolescência - Ecolixo</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* BODY */
+body{
+  background:#0a0a0a;
+  color:#fff;
+}
+
+/* HEADER */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 50px;
+  background:#111;
+  font-size: 15px; ;
+}
+
+header h1{
+  color:#00c853;
+}
+
+nav a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover, .ativo{
+  color:#00c853;
+}
+
+/* HERO */
+.hero{
+  height:80vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+             url('https://images.unsplash.com/photo-1518770660439-4636190af475');
+  background-size:cover;
+}
+
+.hero-text h2{
+  font-size:40px;
+  margin-bottom:20px;
+}
+
+.hero-text p{
+  margin-bottom:20px;
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:30px;
+  padding:60px;
+}
+
+.card{
+  background:#1a1a1a;
+  padding:30px;
+  border-radius:15px;
+  width:260px;
+  text-align:center;
+  transition:0.3s;
+  border:1px solid rgba(0,200,83,0.2);
+}
+
+.card:hover{
+  transform:translateY(-12px) scale(1.02);
+  box-shadow:0 10px 30px rgba(0,200,83,0.4);
+}
+
+.card h3{
+  margin-bottom:10px;
+  color:#00c853;
+}
+
+/* DESTAQUE */
+.destaque{
+  background:#111;
+  margin:40px auto;
+  padding:40px;
+  border-radius:20px;
+  max-width:800px;
+  text-align:center;
+  border:1px solid rgba(0,200,83,0.2);
+  background:#1a1a1a;
+  text-align:center;
+
+  transition: all 0.3s ease;
+
+  border:1px solid rgba(0,200,83,0.2);
+  cursor:pointer;
+
+
+  transform:translateY(-12px) scale(1.02);
+
+  box-shadow: 0 10px 30px rgba(0,200,83,0.4)
+
+
+
+  
+}
+
+.btn{
+  background:#00c853;
+  padding:12px 25px;
+  color:black;
+  text-decoration:none;
+  border-radius:5px;
+  display:inline-block;
+  margin-top:20px;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#00e676;
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:20px;
+  background:#111;
+}
+
+/* ANIMAÇÃO */
+.fade-in{
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.8s;
+}
+
+.fade-in.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.logo{
+  height:150px;          /* define altura do header da logo */
+  display:flex;
+  align-items:center;
+}
+
+.logo img{
+  height:100%;          /* faz a imagem caber dentro da logo */
+  max-width:200px;      /* impede de ficar gigante na largura */
+  object-fit:contain;   /* mantém proporção */
+}
+.produtos{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:30px;
+  justify-items:center;
+  margin-top:30px;
+}
+
+.produtos img{
+  width:140px;
+  cursor:pointer;
+  transition:0.3s;
+  border-radius:15px;
+}
+
+.produtos img:hover{
+  transform:scale(1.08);
+
+  box-shadow:
+    0 0 10px #00c853,
+    0 0 20px #00c853;
+
+}
+
+/* POPUP */
+
+.popup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.8);
+
+  justify-content:center;
+  align-items:center;
+
+  z-index:999;
+}
+
+.popup-conteudo{
+  background:#111;
+  padding:30px;
+  width:400px;
+  border-radius:20px;
+  border:2px solid #00c853;
+
+  color:white;
+
+  animation:fadeIn 0.3s ease;
+}
+
+.fechar{
+  float:right;
+  font-size:25px;
+  cursor:pointer;
+  color:#00c853;
+}
+
+.fechar:hover{
+  color:red;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="../imagem logo 2.0.png" alt="Logo">
+  </div>
+  <nav>
+    <a href="../index.html">Início</a>
+    <a href="./obsolescencia.html" class="ativo">Obsolescência</a>
+     <a href="./formulario.html">Formulário</a>
+    <a href="./reciclagem.html">Reciclagem</a>
+    <a href="./ldpage.html">Conversa</a>
+    <a href="./calculo.html">Calculadora</a>
+    <a href="./membros.html">Nossa Equipe</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-text fade-in">
+    <h2>⏳ Obsolescência Programada</h2>
+    <p>Empresas fazem produtos durarem menos para você comprar mais. Isso gera bilhões em lixo eletrônico.</p>
+  </div>
+</section>
+
+<section class="cards">
+  <div class="card fade-in">
+    <h3>📉 Planejada</h3>
+    <p>Produtos são feitos para quebrar ou parar de funcionar após certo tempo.</p>
+  </div>
+
+  <div class="card fade-in">
+    <h3>📱 Perceptual</h3>
+    <p>Atualizações fazem seu aparelho parecer ultrapassado, mesmo funcionando.</p>
+  </div>
+
+  <div class="card fade-in">
+    <h3>⚙️ Econômica</h3>
+    <p>Consertar custa mais caro que comprar outro, incentivando o descarte.</p>
+  </div>
+</section>
+
+<section class="destaque fade-in">
+ <h2>Impacto ambiental</h2> 
+ <h3>----------------------</h3>
+<p>
+O lixo eletrônico é um dos resíduos que mais cresce no mundo. Milhões de celulares, computadores e outros aparelhos são descartados todos os anos, muitas vezes de maneira incorreta.
+
+Quando esses dispositivos são jogados no lixo comum, substâncias tóxicas como chumbo, mercúrio e cádmio podem contaminar o solo, os rios e até a água consumida pelas pessoas, causando sérios danos ao meio ambiente e à saúde humana.
+
+Além disso, a fabricação constante de novos aparelhos exige a extração de recursos naturais como ouro, cobre e lítio. Esse processo provoca desmatamento, destruição de habitats naturais e aumento da poluição causada pelas indústrias.
+
+A obsolescência programada também contribui para o problema, incentivando a troca frequente de dispositivos que muitas vezes ainda poderiam ser utilizados ou consertados.
+
+Por isso, atitudes como reutilizar aparelhos, descartar corretamente em pontos de coleta e apoiar a reciclagem eletrônica são fundamentais para reduzir os impactos ambientais e preservar o planeta para as futuras gerações.
+</p>
+</section>
+
+<section class="destaque fade-in">
+  <h2>Como combater a obsolescência?</h2>
+  <h3>----------------------</h3>
+  <p>A obsolescência programada pode ser combatida através de atitudes conscientes tanto das empresas quanto dos consumidores.
+
+Uma das principais formas é apoiar o Direito ao Reparo, permitindo que celulares, computadores e outros aparelhos possam ser consertados com facilidade, sem a necessidade de troca imediata.
+
+Outra solução importante é comprar produtos mais duráveis e de marcas que ofereçam suporte e atualizações por mais tempo. Isso aumenta a vida útil dos dispositivos e reduz o descarte precoce.
+
+Também é fundamental reutilizar e reciclar aparelhos eletrônicos corretamente. Muitas peças e materiais podem ser reaproveitados, diminuindo a extração de recursos naturais e a quantidade de lixo eletrônico no planeta.
+
+Evitar trocas desnecessárias, fazer manutenção dos dispositivos e optar por produtos usados ou recondicionados também ajudam a reduzir o consumo excessivo.
+
+Além disso, a conscientização da população sobre os impactos ambientais da obsolescência programada é essencial para incentivar hábitos mais sustentáveis e pressionar empresas a produzirem tecnologias mais responsáveis.
+</p>
+</section>
+<section class="destaque fade-in">
+  <h2>Exemplos da Obsolescência Programada no Dia a Dia</h2>
+  <h3>----------------------</h3>
+  <p>A obsolescência programada está presente em diversos aparelhos utilizados diariamente. Muitas vezes ela acontece de forma tão comum que as pessoas nem percebem.
+Um dos exemplos mais conhecidos acontece com os smartphones. Após alguns anos de uso, muitos celulares começam a apresentar lentidão, travamentos e queda no desempenho, principalmente depois de atualizações de sistema. Em muitos casos, o aparelho ainda funciona, mas se torna difícil de usar, incentivando a compra de um modelo mais novo.
+Outro exemplo são as baterias de celulares e notebooks. Com o passar do tempo, elas perdem capacidade de armazenamento de energia, descarregando rapidamente. Em vários aparelhos modernos, a bateria é integrada ao dispositivo, dificultando ou encarecendo sua substituição.
+As impressoras também são bastante conhecidas por casos de obsolescência programada. Alguns modelos possuem sistemas que bloqueiam o funcionamento após determinada quantidade de impressões, mesmo quando ainda poderiam continuar sendo utilizados.
+Fones de ouvido, carregadores e cabos são exemplos de produtos que frequentemente apresentam desgaste rápido. Muitas vezes os materiais utilizados são frágeis, fazendo com que o consumidor precise comprar novos acessórios em pouco tempo.
+Além disso, a indústria da tecnologia incentiva constantemente o consumo através de lançamentos anuais, propaganda e novas tendências. Isso faz com que muitos consumidores sintam necessidade de trocar aparelhos ainda funcionais apenas para acompanhar novidades do mercado.
+Essas situações aumentam o consumo excessivo e contribuem diretamente para o crescimento do lixo eletrônico e dos impactos ambientais causados pelo descarte incorreto desses produtos.</p>
+</section>
+
+<section class="destaque fade-in">
+
+  <h2>Eletrônicos com Tendência à Obsolescência Programada</h2>
+  <h3>----------------------</h3>
+
+  <div class="produtos">
+
+    <img src="../celularo.jpeg" onclick="abrirPopup('celular')">
+
+    <img src="../notebooks.jpeg" onclick="abrirPopup('notebook')">
+
+    <img src="../impressoras.jpeg" onclick="abrirPopup('impressora')">
+
+    <img src="../fones.avif" onclick="abrirPopup('fone')">
+
+  </div>
+
+</section>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+  
+  <div class="popup-conteudo">
+
+    <span class="fechar" onclick="fecharPopup()">✖</span>
+
+    <h2 id="popupTitulo"></h2>
+
+    <p id="popupTexto"></p>
+
+  </div>
+
+</div>
+
+<footer>
+  Projeto Ecolixo © 2026
+</footer>
+
+<script>
+/* ANIMAÇÃO AO SCROLL */
+const elements = document.querySelectorAll('.fade-in');
+
+window.addEventListener('scroll', () => {
+  elements.forEach(el => {
+    const pos = el.getBoundingClientRect().top;
+    if(pos < window.innerHeight - 100){
+      el.classList.add('show');
+    }
+  });
+});
+const informacoes = {
+
+  celular: {
+    titulo: "📱 Smartphones",
+    texto: "Celulares costumam perder desempenho após atualizações e possuem baterias com vida útil limitada."
+  },
+
+  notebook: {
+    titulo: "💻 Notebooks",
+    texto: "Muitos notebooks antigos ficam incompatíveis com programas modernos e sistemas atualizados."
+  },
+
+  impressora: {
+    titulo: "🖨️ Impressoras",
+    texto: "Algumas impressoras possuem bloqueios internos após certa quantidade de impressões."
+  },
+
+  fone: {
+    titulo: "🎧 Fones de ouvido",
+    texto: "Cabos frágeis e baterias pequenas fazem com que muitos fones tenham pouca durabilidade."
+  }
+
+};
+
+function abrirPopup(tipo){
+
+  document.getElementById("popup").style.display = "flex";
+
+  document.getElementById("popupTitulo").innerHTML =
+  informacoes[tipo].titulo;
+
+  document.getElementById("popupTexto").innerHTML =
+  informacoes[tipo].texto;
+}
+
+function fecharPopup(){
+
+  document.getElementById("popup").style.display = "none";
+
+}
+</script>
+
+</body>
+</html>
