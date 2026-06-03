@@ -1,0 +1,221 @@
+============================================================
+                        LEIAME.TXT
+                     PROJETO TRASHBUCKET
+============================================================
+
+
+(01) NOME DO PROJETO
+------------------------------------------------------------
+TRASHBUCKET
+
+
+(02) LINK DA PUBLICAÇÃO DO PROJETO
+------------------------------------------------------------
+(Inserir o link do GitHub Pages ou Netlify após a publicação)
+
+
+(03) PARTICIPANTES E PAPÉIS
+------------------------------------------------------------
+
+Tomás Costa e Gloria — Tech Lead
+Responsável pela liderança técnica do projeto, organização
+geral da equipe, tomada de decisões estruturais, definição
+da arquitetura das páginas, acompanhamento do cronograma
+de desenvolvimento e suporte técnico aos demais integrantes.
+
+João Vitor Nogueira de Assis — Designer
+Responsável pela identidade visual completa do projeto,
+incluindo a criação do logotipo, definição da paleta de cores
+(tema escuro com destaque em verde #00c853), escolha da
+tipografia Poppins, design das páginas, organização dos
+layouts, criação dos elementos visuais e da experiência
+estética do usuário em todo o site.
+
+Nicolle Neiva — Desenvolvedora Front-End
+Responsável pelo desenvolvimento e programação das páginas
+do site, implementação do HTML5, CSS3 e JavaScript, criação
+das funcionalidades interativas como o celular animado,
+modais, calculadora de lixo eletrônico, animações de scroll,
+sistema de cards clicáveis, popup de mapa e estruturação
+geral do código do projeto.
+
+Matheus Nogueira da Silva Lima — Redator de Conteúdo
+Responsável pela pesquisa e produção de todo o conteúdo
+textual do site, incluindo os textos sobre obsolescência
+programada, impacto ambiental do lixo eletrônico, formas
+de reciclagem, dicas de descarte correto, informações sobre
+componentes eletrônicos e todos os demais textos educativos
+presentes nas páginas do projeto.
+
+
+(04) OBJETIVO PRINCIPAL DO PROJETO
+------------------------------------------------------------
+O principal objetivo do projeto TRASHBUCKET é conscientizar
+os usuários sobre os impactos ambientais causados pela
+obsolescência programada e pelo descarte incorreto de
+aparelhos eletrônicos. Por meio de um site moderno, visual
+e interativo, o projeto busca educar estudantes, jovens e
+usuários de tecnologia sobre a importância da reciclagem
+eletrônica, do consumo consciente e do descarte correto de
+dispositivos como celulares, notebooks, tablets, impressoras
+e baterias. Além de informar, o TRASHBUCKET incentiva
+atitudes sustentáveis e apresenta caminhos práticos para
+reduzir o volume de lixo eletrônico gerado no planeta.
+
+
+(05) DESCRIÇÃO RESUMIDA DO PROJETO
+------------------------------------------------------------
+PARÁGRAFO 1:
+O TRASHBUCKET é um site educativo e interativo desenvolvido
+para apresentar informações sobre tecnologia e sustentabilidade
+de forma acessível e visualmente atrativa. O site é composto
+por sete páginas interligadas por um menu de navegação
+completo. A página inicial (index.html) apresenta uma tabela
+de descarte de eletrônicos, cards informativos clicáveis com
+modais explicativos e um celular animado interativo onde o
+usuário pode clicar em diferentes componentes — bateria,
+processador, câmera e alto-falante — para visualizar
+informações sobre cada peça e dicas de reciclagem. A página
+de Obsolescência (obsolescencia.html) apresenta conteúdo
+educativo detalhado sobre o que é obsolescência programada,
+seus tipos, impacto ambiental e formas de combatê-la, além
+de imagens clicáveis de produtos eletrônicos com popups
+informativos. A página de Reciclagem (reciclagem.html)
+explica o processo de reciclagem eletrônica em etapas visuais
+e conta com um modal de mapa interativo onde o usuário pode
+buscar pontos de coleta por cidade ou usar sua localização
+automática via geolocalização do navegador.
+
+PARÁGRAFO 2:
+O site também conta com uma Calculadora de Lixo Eletrônico
+(calculo.html), desenvolvida em JavaScript, onde o usuário
+informa a quantidade de diferentes aparelhos — celulares,
+tablets, notebooks, impressoras, baterias e fones de ouvido
+— e recebe o peso total estimado de lixo eletrônico que
+seria gerado, com comparações visuais e dicas de descarte.
+A página de Formulário (formulario.html) permite que os
+usuários entrem em contato com a equipe, utilizando o método
+GET conforme exigido, com validação dos campos via JavaScript
+e exibição de mensagem de sucesso após o envio. A Landing
+Page (ldpage.html) apresenta o projeto de forma impactante,
+com hero section, grid de cards e chamadas para ação. A
+página Nossa Equipe (membros.html) apresenta os integrantes
+do grupo com fotos, cargos e links para redes sociais. Todo
+o projeto foi desenvolvido com design consistente, utilizando
+fundo escuro (#0a0a0a), cor de destaque verde (#00c853),
+tipografia Poppins e animações suaves de entrada ao rolar
+a página, garantindo uma experiência de usuário moderna e
+agradável em todas as páginas.
+
+
+(06) FINALIDADE
+------------------------------------------------------------
+Sim, o projeto foi desenvolvido para atender uma demanda
+social e educacional. O TRASHBUCKET foi criado com foco no
+público jovem e estudantil, que é o maior consumidor de
+tecnologia e, consequentemente, um dos principais geradores
+de lixo eletrônico. O site serve como ferramenta de
+conscientização ambiental para escolas, feiras técnicas,
+projetos acadêmicos e campanhas de sustentabilidade. Ao
+apresentar de forma clara e interativa os problemas causados
+pelo descarte incorreto de eletrônicos e as soluções
+disponíveis, o projeto contribui diretamente para a formação
+de consumidores mais conscientes e responsáveis com o meio
+ambiente. A escolha do tema também reflete uma preocupação
+real e atual da sociedade, já que o lixo eletrônico é um
+dos resíduos que mais crescem no mundo, com mais de 50
+milhões de toneladas geradas por ano, sendo menos de 20%
+recicladas corretamente.
+
+
+(07) PARTICIPAÇÃO
+------------------------------------------------------------
+Sim, todos os integrantes da equipe participaram ativamente
+do desenvolvimento do projeto, cada um contribuindo com suas
+habilidades específicas dentro do papel definido no início
+do semestre.
+
+Tomás Costa e Gloria (Tech Lead) coordenou a equipe durante
+todo o processo, garantindo que as etapas fossem cumpridas
+dentro do cronograma e que as decisões técnicas fossem
+tomadas de forma organizada e eficiente.
+
+João Vitor Nogueira de Assis (Designer) foi responsável por
+toda a identidade visual do projeto, desde a criação do
+logotipo até a definição do layout de cada página, garantindo
+consistência visual e uma experiência estética de qualidade
+em todo o site.
+
+Nicolle Neiva (Desenvolvedora Front-End) programou e
+implementou todas as páginas do site, desenvolvendo as
+funcionalidades interativas em HTML, CSS e JavaScript,
+incluindo modais, animações, calculadora, mapa interativo
+e celular animado.
+
+Matheus Nogueira da Silva Lima (Redator de Conteúdo) produziu
+todos os textos educativos do site, realizando pesquisas
+sobre obsolescência programada, reciclagem eletrônica e
+impacto ambiental para garantir que o conteúdo fosse
+informativo, correto e adequado ao público-alvo.
+
+A equipe trabalhou de forma colaborativa, com divisão clara
+de tarefas e comunicação constante, o que resultou em um
+projeto coeso, funcional e visualmente organizado.
+
+
+(08) APLICAÇÃO DO PROJETO
+------------------------------------------------------------
+Sim, o conhecimento teórico da disciplina de Introdução à
+Programação Web foi amplamente aplicado no desenvolvimento
+do TRASHBUCKET e revertido como benefício educacional para
+a comunidade.
+
+Na área de HTML5, foram utilizados elementos semânticos como
+header, nav, section, footer, além de tabelas, formulários
+com método GET, iframes para incorporação de mapas do Google,
+e links de navegação entre todas as páginas do projeto.
+
+Na área de CSS3, foram aplicados conceitos de flexbox, grid
+layout, variáveis CSS (custom properties), animações com
+@keyframes, transições, pseudo-classes como :hover, media
+queries para responsividade e posicionamento com position
+absolute e fixed.
+
+Na área de JavaScript, foram desenvolvidas diversas
+funcionalidades: criação e manipulação de elementos do DOM,
+eventos de clique e teclado, validação de formulários,
+cálculos matemáticos na calculadora de lixo eletrônico,
+abertura e fechamento de modais, animações ao rolar a página
+com IntersectionObserver e scroll events, uso da API de
+Geolocalização do navegador e manipulação de URLs com
+URLSearchParams para detecção de envio de formulário GET.
+
+Todo esse conhecimento foi aplicado de forma prática e
+revertido como benefício social, pois o site educa e
+conscientiza os usuários sobre o descarte correto de
+eletrônicos, contribuindo para a preservação ambiental e
+para a formação de cidadãos mais responsáveis com o
+consumo tecnológico.
+
+
+(09) CONCLUSÃO
+------------------------------------------------------------
+O desenvolvimento do projeto TRASHBUCKET foi uma experiência
+completa que uniu tecnologia, educação e sustentabilidade em
+uma única plataforma digital. Ao longo do processo, a equipe
+aplicou na prática os conteúdos aprendidos na disciplina,
+enfrentou desafios reais de desenvolvimento web e construiu
+uma solução funcional e relevante para um problema ambiental
+contemporâneo. O projeto representa não apenas um trabalho
+acadêmico, mas um primeiro passo no portfólio profissional
+dos integrantes, demonstrando capacidade de trabalho em
+equipe, organização, criatividade e aplicação técnica dos
+conhecimentos adquiridos no primeiro semestre do curso de
+Ciência da Computação.
+
+
+============================================================
+              TRASHBUCKET — ECOLIXO © 2026
+         Projeto Final — Introdução à Programação Web
+                    Universidade FUMEC
+============================================================
