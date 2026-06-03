@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Dados Recebidos</title>
+</head>
+<body>
+
+<h1>Mensagem enviada com sucesso!</h1>
+
+<p><strong>Nome:</strong> <span id="nome"></span></p>
+<p><strong>Email:</strong> <span id="email"></span></p>
+<p><strong>Mensagem:</strong> <span id="mensagem"></span></p>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+
+document.getElementById("nome").textContent =
+params.get("nome");
+
+document.getElementById("email").textContent =
+params.get("email");
+
+document.getElementById("mensagem").textContent =
+params.get("mensagem");
+</script>
+
+</body>
+</html>

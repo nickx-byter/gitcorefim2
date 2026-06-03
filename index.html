@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
 <title>TRASHBUCKET</title>
+<link rel="icon" href="./icon.png">
 <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -304,20 +305,7 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-// ============================================
-// SCRIPT ORIGINAL DO INFO-BOX (hover nas peças)
-// ============================================
-const infoBox = document.getElementById("info-box");
 
-document.querySelectorAll(".peca").forEach(peca => {
-  peca.addEventListener("mouseenter", () => {
-    infoBox.innerHTML = peca.getAttribute("data-info");
-  });
-
-  peca.addEventListener("mouseleave", () => {
-    infoBox.innerHTML = "Passe o mouse nas partes do celular 👆";
-  });
-});
 
 // ============================================
 // MODAL DOS CARDS (CLIQUE NOS CARDS)

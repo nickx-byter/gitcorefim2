@@ -3,11 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Calculadora - Ecolixo</title>
-
+<title>Calculadora - TRASHBUCKET</title>
+<link rel="icon" href="../icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
 <style>
 
 /* RESET */
@@ -39,9 +37,9 @@ header{
   justify-content:space-between;
   align-items:center;
   padding:20px 50px;
-  background:rgba(17, 17, 17, 0.9);
+  background:var(--header);
   border-bottom:1px solid rgba(0,200,83,0.3);
-  font-size: 15px; ;
+  font-size:15px;
 }
 
 .logo{
@@ -59,23 +57,13 @@ header{
 /* NAV */
 nav{
   display:flex;
-  gap: 25px;
+  gap:20px;
 }
 
 nav a{
   color:white;
   text-decoration:none;
   position:relative;
-}
-
-nav a::after{
-  content:"";
-  position:absolute;
-  width:0%;
-  height:2px;
-  bottom:-5px;
-  left:0;
-  background:var(--verde);
   transition:0.3s;
 }
 
@@ -83,15 +71,10 @@ nav a:hover, .ativo{
   color:#00c853;
 }
 
-
-nav a:hover{
-  color:var(--verde);
-}
-
 /* HERO */
 .hero{
   text-align:center;
-  padding:60px 20px;
+  padding:60px 20px 30px;
 }
 
 .hero h1{
@@ -108,35 +91,76 @@ nav a:hover{
 /* CALCULADORA */
 .calculadora{
   background:var(--card);
-  max-width:600px;
-  margin:40px auto;
+  max-width:650px;
+  margin:30px auto;
   padding:40px;
   border-radius:20px;
   border:1px solid rgba(0,200,83,0.3);
-
   display:grid;
-  gap:20px;
+  gap:15px;
 }
 
 .calculadora h2{
   color:var(--verde);
   text-align:center;
+  margin-bottom:10px;
 }
 
-.calculadora input{
-  padding:15px;
-  border:none;
+/* LINHAS DOS APARELHOS */
+.aparelho-linha{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:#111;
   border-radius:12px;
+  padding:12px 16px;
+  border:1px solid rgba(0,200,83,0.15);
+  transition:0.2s;
+}
+
+.aparelho-linha:hover{
+  border-color:rgba(0,200,83,0.4);
+}
+
+.aparelho-icone{
+  font-size:26px;
+  width:36px;
+  text-align:center;
+  flex-shrink:0;
+}
+
+.aparelho-nome{
+  flex:1;
+  font-size:14px;
+  color:#ccc;
+}
+
+.aparelho-nome span{
+  display:block;
+  font-size:11px;
+  color:#555;
+  margin-top:2px;
+}
+
+.aparelho-linha input{
+  width:80px;
+  padding:8px 12px;
+  border:none;
+  border-radius:8px;
   background:#222;
   color:white;
   outline:none;
-  font-size:16px;
+  font-size:15px;
+  text-align:center;
+  border:1px solid transparent;
+  transition:0.2s;
 }
 
-.calculadora input:focus{
-  border:1px solid var(--verde);
+.aparelho-linha input:focus{
+  border-color:var(--verde);
 }
 
+/* BOTÃO */
 .calculadora button{
   padding:15px;
   border:none;
@@ -147,6 +171,7 @@ nav a:hover{
   font-size:16px;
   cursor:pointer;
   transition:0.3s;
+  margin-top:5px;
 }
 
 .calculadora button:hover{
@@ -156,14 +181,108 @@ nav a:hover{
 
 /* RESULTADO */
 .resultado{
-  margin-top:20px;
-  padding:20px;
+  display:none;
+  margin-top:10px;
+  padding:25px;
   border-radius:15px;
   background:#111;
   border:1px solid rgba(0,200,83,0.3);
   text-align:center;
-  font-size:20px;
+}
+
+.resultado-titulo{
   color:var(--verde);
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:20px;
+}
+
+.resultado-peso{
+  font-size:42px;
+  font-weight:700;
+  color:var(--verde);
+  margin-bottom:5px;
+}
+
+.resultado-unidade{
+  color:#aaa;
+  font-size:14px;
+  margin-bottom:20px;
+}
+
+.resultado-comparacao{
+  background:#1a1a1a;
+  border-radius:10px;
+  padding:14px;
+  font-size:14px;
+  color:#ccc;
+  margin-bottom:20px;
+  border:1px solid rgba(0,200,83,0.15);
+}
+
+/* LISTA DE ITENS */
+.resultado-lista{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  margin-bottom:20px;
+}
+
+.resultado-item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:8px 14px;
+  background:#1a1a1a;
+  border-radius:8px;
+  font-size:13px;
+}
+
+.resultado-item span:last-child{
+  color:var(--verde);
+  font-weight:600;
+}
+
+/* DICA */
+.resultado-dica{
+  background:rgba(0,200,83,0.08);
+  border:1px solid rgba(0,200,83,0.25);
+  border-radius:10px;
+  padding:14px;
+  font-size:13px;
+  color:#aaa;
+  line-height:1.6;
+}
+
+.resultado-dica strong{
+  color:var(--verde);
+}
+
+/* BOTÃO LIMPAR */
+.btn-limpar{
+  padding:10px;
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:10px;
+  background:transparent;
+  color:#aaa;
+  font-size:13px;
+  cursor:pointer;
+  transition:0.3s;
+  margin-top:5px;
+}
+
+.btn-limpar:hover{
+  border-color:#ff4444;
+  color:#ff4444;
+  transform:none !important;
+  background:transparent !important;
+}
+
+/* ERRO */
+.erro{
+  color:#ff4444;
+  font-size:13px;
+  text-align:center;
   display:none;
 }
 
@@ -181,48 +300,112 @@ footer{
 <body>
 
 <header>
-
   <div class="logo">
     <img src="../imagem logo 2.0.png" alt="Logo">
   </div>
-
   <nav>
     <a href="../index.html">Início</a>
     <a href="./obsolescencia.html">Obsolescência</a>
-    <a href="./formulario.html">Formulario</a>
+    <a href="./formulario.html">Formulário</a>
     <a href="./reciclagem.html">Reciclagem</a>
     <a href="./ldpage.html">Conversa</a>
     <a href="./calculo.html" class="ativo">Calculadora</a>
     <a href="./membros.html">Nossa Equipe</a>
   </nav>
-
 </header>
 
 <section class="hero">
-
   <h1>♻️ Calculadora de Lixo Eletrônico</h1>
-
-  <p>
-    Descubra quanto lixo eletrônico pode ser gerado pelos seus aparelhos antigos.
-  </p>
-
+  <p>Descubra quanto lixo eletrônico pode ser gerado pelos seus aparelhos antigos. Informe a quantidade de cada aparelho.</p>
 </section>
 
 <section class="calculadora">
 
   <h2>Faça o cálculo</h2>
 
-  <input 
-    type="number" 
-    id="celulares"
-    placeholder="Quantidade de celulares antigos"
-  >
+  <!-- CELULAR -->
+  <div class="aparelho-linha">
+    <div class="aparelho-icone">📱</div>
+    <div class="aparelho-nome">
+      Celular / Smartphone
+      <span>~150g por unidade</span>
+    </div>
+    <input type="number" id="celulares" placeholder="0" min="0">
+  </div>
 
-  <button onclick="calcularLixo()">
-    Calcular Impacto
-  </button>
+  <!-- TABLET -->
+  <div class="aparelho-linha">
+    <div class="aparelho-icone">📟</div>
+    <div class="aparelho-nome">
+      Tablet
+      <span>~500g por unidade</span>
+    </div>
+    <input type="number" id="tablets" placeholder="0" min="0">
+  </div>
 
-  <div class="resultado" id="resultado"></div>
+  <!-- NOTEBOOK -->
+  <div class="aparelho-linha">
+    <div class="aparelho-icone">💻</div>
+    <div class="aparelho-nome">
+      Notebook
+      <span>~2000g por unidade</span>
+    </div>
+    <input type="number" id="notebooks" placeholder="0" min="0">
+  </div>
+
+  <!-- IMPRESSORA -->
+  <div class="aparelho-linha">
+    <div class="aparelho-icone">🖨️</div>
+    <div class="aparelho-nome">
+      Impressora / Periférico
+      <span>~5000g por unidade</span>
+    </div>
+    <input type="number" id="impressoras" placeholder="0" min="0">
+  </div>
+
+  <!-- BATERIA -->
+  <div class="aparelho-linha">
+    <div class="aparelho-icone">🔋</div>
+    <div class="aparelho-nome">
+      Bateria avulsa
+      <span>~300g por unidade</span>
+    </div>
+    <input type="number" id="baterias" placeholder="0" min="0">
+  </div>
+
+  <!-- FONE -->
+  <div class="aparelho-linha">
+    <div class="aparelho-icone">🎧</div>
+    <div class="aparelho-nome">
+      Fone de ouvido
+      <span>~50g por unidade</span>
+    </div>
+    <input type="number" id="fones" placeholder="0" min="0">
+  </div>
+
+  <p class="erro" id="erro">⚠️ Digite a quantidade de pelo menos um aparelho!</p>
+
+  <button onclick="calcularLixo()">Calcular Impacto ♻️</button>
+  <button class="btn-limpar" onclick="limpar()">🗑️ Limpar campos</button>
+
+  <!-- RESULTADO -->
+  <div class="resultado" id="resultado">
+
+    <div class="resultado-titulo">📊 Resultado do cálculo</div>
+
+    <div class="resultado-peso" id="resultadoPeso"></div>
+    <div class="resultado-unidade" id="resultadoUnidade"></div>
+
+    <div class="resultado-comparacao" id="resultadoComparacao"></div>
+
+    <div class="resultado-lista" id="resultadoLista"></div>
+
+    <div class="resultado-dica">
+      <strong>♻️ O que fazer?</strong><br>
+      Leve seus aparelhos a pontos de coleta autorizados. Celulares podem ser entregues em lojas de operadoras. Notebooks e impressoras em ecopontos municipais. Baterias NUNCA devem ir ao lixo comum — risco de incêndio e contaminação.
+    </div>
+
+  </div>
 
 </section>
 
@@ -232,32 +415,108 @@ footer{
 
 <script>
 
-function calcularLixo(){
+// Peso em gramas por unidade
+const pesos = {
+  celulares:   { peso: 150,  icone: "📱", nome: "Celular(es)" },
+  tablets:     { peso: 500,  icone: "📟", nome: "Tablet(s)" },
+  notebooks:   { peso: 2000, icone: "💻", nome: "Notebook(s)" },
+  impressoras: { peso: 5000, icone: "🖨️", nome: "Impressora(s)" },
+  baterias:    { peso: 300,  icone: "🔋", nome: "Bateria(s)" },
+  fones:       { peso: 50,   icone: "🎧", nome: "Fone(s)" }
+};
 
-  let celulares =
-  document.getElementById("celulares").value;
+function calcularLixo() {
 
-  if(celulares === ""){
+  const erro = document.getElementById("erro");
+  erro.style.display = "none";
 
-    alert("Digite uma quantidade!");
+  let totalGramas = 0;
+  let itensUsados = [];
+  let algumPreenchido = false;
 
+  // Percorre cada aparelho
+  for (let id in pesos) {
+    const input = document.getElementById(id);
+    const qtd = parseInt(input.value) || 0;
+
+    if (qtd < 0) {
+      input.value = 0;
+      continue;
+    }
+
+    if (qtd > 0) {
+      algumPreenchido = true;
+      const pesoItem = qtd * pesos[id].peso;
+      totalGramas += pesoItem;
+      itensUsados.push({
+        icone: pesos[id].icone,
+        nome: pesos[id].nome,
+        qtd: qtd,
+        peso: pesoItem
+      });
+    }
+  }
+
+  // Validação: nenhum campo preenchido
+  if (!algumPreenchido) {
+    erro.style.display = "block";
     return;
   }
 
-  let peso = celulares * 150;
+  // Formatar peso
+  let pesoTexto, unidadeTexto;
+  if (totalGramas >= 1000) {
+    pesoTexto = (totalGramas / 1000).toFixed(2) + "";
+    unidadeTexto = "kg de lixo eletrônico";
+  } else {
+    pesoTexto = totalGramas + "";
+    unidadeTexto = "gramas de lixo eletrônico";
+  }
 
-  let resultado =
-  document.getElementById("resultado");
+  // Comparação divertida
+  let comparacao = "";
+  const kg = totalGramas / 1000;
+  if (kg < 1) {
+    comparacao = "⚖️ Isso equivale ao peso de " + Math.round(totalGramas / 50) + " maçã(s).";
+  } else if (kg < 5) {
+    comparacao = "⚖️ Isso equivale ao peso de " + Math.round(kg) + " tijolo(s) comum(ns).";
+  } else if (kg < 20) {
+    comparacao = "⚖️ Isso equivale ao peso de " + Math.round(kg / 5) + " bola(s) de boliche.";
+  } else {
+    comparacao = "⚖️ Isso equivale ao peso de " + Math.round(kg / 70) + " pessoa(s) adulta(s)!";
+  }
 
+  // Montar lista de itens
+  let listaHTML = "";
+  itensUsados.forEach(item => {
+    const pesoFormatado = item.peso >= 1000
+      ? (item.peso / 1000).toFixed(2) + " kg"
+      : item.peso + " g";
+    listaHTML += `
+      <div class="resultado-item">
+        <span>${item.icone} ${item.qtd}x ${item.nome}</span>
+        <span>${pesoFormatado}</span>
+      </div>
+    `;
+  });
+
+  // Exibir resultado
+  document.getElementById("resultadoPeso").textContent = pesoTexto;
+  document.getElementById("resultadoUnidade").textContent = unidadeTexto;
+  document.getElementById("resultadoComparacao").textContent = comparacao;
+  document.getElementById("resultadoLista").innerHTML = listaHTML;
+
+  const resultado = document.getElementById("resultado");
   resultado.style.display = "block";
+  resultado.scrollIntoView({ behavior: "smooth", block: "nearest" });
+}
 
-  resultado.innerHTML =
-  "📱 " + celulares +
-  " celulares podem gerar aproximadamente <br><br>" +
-
-  "♻️ " + peso +
-  " gramas de lixo eletrônico.";
-
+function limpar() {
+  for (let id in pesos) {
+    document.getElementById(id).value = "";
+  }
+  document.getElementById("resultado").style.display = "none";
+  document.getElementById("erro").style.display = "none";
 }
 
 </script>

@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TrashBucket - Contato</title>
+<title>Contato - TRASHBUCKET</title>
+<link rel="icon" href="../icon.png">
 
 <link rel="stylesheet" href="style.css">
 
@@ -238,18 +239,39 @@ footer{
 </section>
 
 <div class="form-contato">
-    <form method="get" id="formContato">
-        <input type="text" id="nome" placeholder="Seu nome" required>
-        <input type="email" id="email" placeholder="seu@email.com" required>
-        <textarea id="mensagem" rows="4" placeholder="Conte sobre sua dúvida ambiental ou sugestão..."></textarea>
+    <form action="receber.html" method="get" id="formContato">
+
+        <input
+            type="text"
+            id="nome"
+            name="nome"
+            placeholder="Seu nome"
+            required>
+
+        <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="seu@email.com"
+            required>
+
+        <textarea
+            id="mensagem"
+            name="mensagem"
+            rows="4"
+            placeholder="Conte sobre sua dúvida ambiental ou sugestão..."
+            required></textarea>
+
         <button type="submit">Enviar mensagem 🌱</button>
+
         <p id="feedback"></p>
+
     </form>
 </div>
 <div class="form-contato">
     <center><h2>INFORMATIVO!</h2></center>
     <center><p>---------------------------</p></center>
-    <p> trabalhamos para um futuro melhor e mais consciente. Tenha consciencia do
+    <p> Trabalhamos para um futuro melhor e mais consciente. Tenha consciencia do
         seu consumo e lixo produzido, e se puder, recicle seus eletrônicos antigos. Juntos podemos reduzir o impacto ambiental e construir um mundo mais sustentável!
     </p>
 </div>
@@ -264,21 +286,19 @@ const form = document.getElementById('formContato');
 const feedback = document.getElementById('feedback');
 
 form.addEventListener('submit', function(e){
-    e.preventDefault();
 
     const nome = document.getElementById('nome').value.trim();
     const email = document.getElementById('email').value.trim();
     const mensagem = document.getElementById('mensagem').value.trim();
 
     if(!nome || !email || !mensagem){
+        e.preventDefault();
         feedback.innerText = '❌ Preencha todos os campos';
         feedback.style.color = 'red';
         return;
     }
 
-    feedback.innerText = '✅ Mensagem enviada com sucesso!';
-    feedback.style.color = '#00c853';
-    form.reset();
+    
 });
 </script>
 
