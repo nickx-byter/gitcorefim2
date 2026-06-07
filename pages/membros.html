@@ -5,214 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossa Equipe - TRASHBUCKET</title>
     <link rel="icon" href="../icon.png">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/glass.css">
+
     <style>
-        /* RESET */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        /* BODY */
-        body {
-            background: #0a0a0a;
-            color: #fff;
-        }
-
-        /* HEADER */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 50px;
-            background: #111;
-            font-size: 15px; ;
-            border-bottom:1px solid rgba(0,200,83,0.2);
-        }
-
-        .logo {
-            height: 150px;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo img {
-            height: 100%;
-            max-width: 200px;
-            object-fit: contain;
-        }
-
-        nav a {
-            color: white;
-            margin-left: 20px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        nav a:hover,
-        .ativo {
-            color: #00c853;
-        }
-
-        /* EQUIPE */
-        .equipe {
-            max-width: 1100px;
-            margin: 60px auto;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .equipe h2 {
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .subtitulo-equipe {
-            color: #aaa;
-            margin-bottom: 40px;
-        }
-
-        .cards-equipe {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .membro {
-            background: #1a1a1a;
-            width: 260px;
-            padding: 30px 20px;
-            border-radius: 20px;
-            transition: 0.3s;
-            border: 1px solid rgba(0, 200, 83, 0.2);
-        }
-
-        .membro:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 0 20px rgba(0, 200, 83, 0.3);
-        }
-
-        .avatar img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-        }
-
-        .membro h3 {
-            margin-bottom: 5px;
-            font-size: 16px;
-        }
-
-        .cargo {
-            color: #00c853;
-            margin-bottom: 10px;
-            font-size: 14px;
-        }
-
-        .descricao {
-            color: #ccc;
-            font-size: 13px;
-            line-height: 1.4;
-        }
-
-        /* SOCIAL */
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 15px;
-        }
-
-        .social-icons a {
-            font-size: 18px;
-            background: #0f0f0f;
-            padding: 8px 12px;
-            border-radius: 8px;
-            transition: 0.3s;
-            text-decoration: none;
-            color: white;
-        }
-
-        .social-icons a:hover {
-            background: #00c853;
-            transform: scale(1.1);
-            color: black;
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #111;
-            margin-top: 40px;
-            color: #fffefe;
-        }
-
-        /* HAMBURGER */
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 8px;
-        }
-
-        .menu-toggle span {
-            display: block;
-            width: 25px;
-            height: 2px;
-            background: white;
-            border-radius: 2px;
-            transition: 0.3s;
-        }
-
-        /* RESPONSIVO */
-        @media (max-width: 900px) {
-            header {
-                padding: 15px 20px;
-                flex-wrap: wrap;
-            }
-
-            .logo { height: 70px; }
-
-            .menu-toggle { display: flex; }
-
-            nav {
-                display: none;
-                width: 100%;
-                flex-direction: column;
-                background: #111;
-                padding: 10px 0;
-                border-top: 1px solid #222;
-            }
-
-            nav.aberto { display: flex; }
-
-            nav a {
-                padding: 12px 20px;
-                margin: 0;
-                border-bottom: 1px solid #222;
-            }
-
-            .equipe {
-                margin: 30px auto;
-            }
-
-            .equipe h2 { font-size: 24px; }
-
-            .membro {
-                width: 100%;
-                max-width: 320px;
-            }
-        }
+.equipe{ max-width:1100px; margin:70px auto; padding:0 20px; text-align:center; }
+.equipe h2{ font-size:30px; font-weight:700; letter-spacing:-0.02em; margin-bottom:12px;
+  background:linear-gradient(135deg,#fff 30%,var(--verde) 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.subtitulo-equipe{ color:var(--text-muted); margin-bottom:44px; font-size:14px; }
+.cards-equipe{ display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
+.membro{
+  background:var(--glass); backdrop-filter:var(--blur); -webkit-backdrop-filter:var(--blur);
+  border:1px solid var(--glass-border); width:240px; padding:28px 20px; border-radius:var(--radius-lg);
+  transition:all 0.25s ease; box-shadow:0 4px 24px rgba(0,0,0,0.2);
+}
+.membro:hover{
+  background:var(--glass-green); border-color:var(--verde-border);
+  transform:translateY(-6px); box-shadow:0 12px 36px rgba(0,200,83,0.1);
+}
+.avatar img{
+  width:100px; height:100px; border-radius:50%; object-fit:cover;
+  margin-bottom:16px; border:2px solid var(--verde-border);
+  box-shadow:0 0 20px rgba(0,200,83,0.15);
+}
+.membro h3{ margin-bottom:6px; font-size:14px; font-weight:600; color:var(--text); }
+.cargo{ color:var(--verde); margin-bottom:10px; font-size:12px; font-weight:600; letter-spacing:0.02em; }
+.descricao{ color:var(--text-muted); font-size:12px; line-height:1.55; }
+.social-icons{ display:flex; justify-content:center; gap:10px; margin-top:14px; }
+.social-icons a{
+  font-size:16px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.07);
+  padding:8px 12px; border-radius:8px; text-decoration:none; color:var(--text);
+  transition:all 0.2s ease;
+}
+.social-icons a:hover{ background:var(--verde-dim); border-color:var(--verde-border); transform:scale(1.1); }
+@media(max-width:900px){
+  .equipe{ margin:40px auto; }
+  .equipe h2{ font-size:22px; }
+  .membro{ width:100%; max-width:320px; }
+}
     </style>
 </head>
 <body>

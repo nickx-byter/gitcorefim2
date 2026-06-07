@@ -1,0 +1,227 @@
+/* ============================================
+   GLASS.CSS — Shared Glassmorphism Base
+   TRASHBUCKET
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700&display=swap');
+
+/* TOKENS */
+:root {
+  --verde:        #00c853;
+  --verde-dim:    rgba(0, 200, 83, 0.10);
+  --verde-glow:   rgba(0, 200, 83, 0.22);
+  --verde-border: rgba(0, 200, 83, 0.14);
+  --bg:           #060a06;
+  --glass:        rgba(255, 255, 255, 0.04);
+  --glass-green:  rgba(0, 200, 83, 0.04);
+  --glass-border: rgba(255, 255, 255, 0.07);
+  --glass-hover:  rgba(255, 255, 255, 0.07);
+  --blur:         blur(16px);
+  --blur-lg:      blur(24px);
+  --text:         #ddeedd;
+  --text-muted:   #6b8f6b;
+  --radius:       16px;
+  --radius-lg:    22px;
+}
+
+/* RESET */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY — gradient blobs dão profundidade ao glass */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 65% 55% at 8% 5%,  rgba(0, 200, 83, 0.09) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 45% at 92% 88%, rgba(0, 150, 60, 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 55% at 55% 35%, rgba(0, 60, 20, 0.05)  0%, transparent 60%);
+  background-attachment: fixed;
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 48px;
+  height: 80px;
+  background: rgba(6, 10, 6, 0.75);
+  backdrop-filter: var(--blur-lg);
+  -webkit-backdrop-filter: var(--blur-lg);
+  border-bottom: 1px solid rgba(0, 200, 83, 0.09);
+  position: sticky;
+  top: 0;
+  z-index: 200;
+}
+
+/* LOGO */
+.logo {
+  height: 54px;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 100%;
+  max-width: 140px;
+  object-fit: contain;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  gap: 4px;
+}
+
+nav a {
+  color: rgba(221, 238, 221, 0.65);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 7px 13px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+nav a:hover,
+nav a.ativo {
+  color: var(--verde);
+  background: var(--verde-dim);
+  border-color: var(--verde-border);
+}
+
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  padding: 9px 10px;
+  transition: 0.2s;
+}
+
+.menu-toggle:hover {
+  background: var(--verde-dim);
+  border-color: var(--verde-border);
+}
+
+.menu-toggle span {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  background: rgba(221,238,221,0.7);
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 28px 20px;
+  background: rgba(6, 10, 6, 0.8);
+  backdrop-filter: var(--blur-lg);
+  -webkit-backdrop-filter: var(--blur-lg);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 80px;
+  letter-spacing: 0.02em;
+}
+
+/* FADE-IN */
+.fade-in {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+@keyframes pulse {
+  0%   { transform: translateY(-50%) scale(1); }
+  50%  { transform: translateY(-50%) scale(1.05); }
+  100% { transform: translateY(-50%) scale(1); }
+}
+
+/* BOTÃO PADRÃO */
+.btn {
+  display: inline-block;
+  padding: 11px 24px;
+  background: var(--verde);
+  color: #000;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 10px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.btn:hover {
+  background: #00e676;
+  box-shadow: 0 4px 20px var(--verde-glow);
+  transform: translateY(-1px);
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  header {
+    padding: 0 18px;
+    height: auto;
+    min-height: 60px;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 8px;
+  }
+
+  .logo { height: 40px; }
+
+  .menu-toggle { display: flex; }
+
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+    padding: 6px 0 10px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    margin-top: 4px;
+  }
+
+  nav.aberto { display: flex; }
+
+  nav a {
+    padding: 11px 14px;
+    border-radius: 8px;
+    border-color: transparent;
+    margin: 1px 0;
+  }
+
+  footer { margin-top: 40px; }
+}
