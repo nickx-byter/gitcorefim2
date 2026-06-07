@@ -175,21 +175,23 @@
 </footer>
 
 <script>
-// HAMBURGER
 document.getElementById('menuToggle').addEventListener('click', () => {
   document.getElementById('mainNav').classList.toggle('aberto');
 });
 
 const elements = document.querySelectorAll('.fade-in');
 
-window.addEventListener('scroll', () => {
+function revelarFadeIn() {
   elements.forEach(el => {
-    const pos = el.getBoundingClientRect().top;
-    if(pos < window.innerHeight - 100){
+    if(el.getBoundingClientRect().top < window.innerHeight - 80){
       el.classList.add('show');
     }
   });
-});
+}
+
+window.addEventListener('scroll', revelarFadeIn);
+window.addEventListener('load', revelarFadeIn);
+revelarFadeIn();
 
 function abrirMapa(){
   document.getElementById("modalMapa").style.display = "flex";

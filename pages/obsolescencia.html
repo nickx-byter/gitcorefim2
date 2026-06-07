@@ -30,6 +30,7 @@
   background:var(--glass); backdrop-filter:var(--blur); -webkit-backdrop-filter:var(--blur);
   border:1px solid var(--glass-border); padding:28px 22px; border-radius:var(--radius);
   text-align:center; transition:all 0.25s ease; box-shadow:0 4px 24px rgba(0,0,0,0.2);
+  display:flex; flex-direction:column;
 }
 .card:hover{
   background:var(--glass-green); border-color:var(--verde-border);
@@ -207,7 +208,6 @@ Além disso, a conscientização da população sobre os impactos ambientais da 
 </footer>
 
 <script>
-// HAMBURGER
 document.getElementById('menuToggle').addEventListener('click', () => {
   document.getElementById('mainNav').classList.toggle('aberto');
 });
@@ -215,14 +215,17 @@ document.getElementById('menuToggle').addEventListener('click', () => {
 /* ANIMAÇÃO AO SCROLL */
 const elements = document.querySelectorAll('.fade-in');
 
-window.addEventListener('scroll', () => {
+function revelarFadeIn() {
   elements.forEach(el => {
-    const pos = el.getBoundingClientRect().top;
-    if(pos < window.innerHeight - 100){
+    if(el.getBoundingClientRect().top < window.innerHeight - 80){
       el.classList.add('show');
     }
   });
-});
+}
+
+window.addEventListener('scroll', revelarFadeIn);
+window.addEventListener('load', revelarFadeIn);
+revelarFadeIn();
 const informacoes = {
 
   celular: {
