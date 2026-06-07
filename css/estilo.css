@@ -46,24 +46,29 @@
   position: relative;
   width: 200px;
   height: 390px;
-  background: var(--glass);
+  background: rgba(6, 16, 6, 0.96);
   backdrop-filter: var(--blur);
   -webkit-backdrop-filter: var(--blur);
   border-radius: 32px;
-  border: 1px solid var(--glass-border);
+  border: 1.5px solid rgba(0, 200, 83, 0.3);
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+  box-shadow:
+    0 24px 64px rgba(0,0,0,0.55),
+    0 0 0 1px rgba(0,200,83,0.06),
+    0 0 40px rgba(0,200,83,0.07),
+    inset 0 1px 0 rgba(255,255,255,0.06);
 }
 
 .celular-inner {
   width: 100%;
   height: 100%;
-  background: linear-gradient(145deg, rgba(0,200,83,0.08), rgba(0,40,15,0.15));
+  background: linear-gradient(160deg, rgba(0,200,83,0.07) 0%, rgba(0,28,10,0.7) 40%, rgba(4,12,4,0.95) 100%);
   border-radius: 28px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .celular-inner svg {
@@ -77,6 +82,9 @@
 .celular-inner p {
   position: absolute;
   bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
   background: rgba(0, 200, 83, 0.12);
   backdrop-filter: blur(8px);
   border: 1px solid var(--verde-border);
@@ -291,6 +299,51 @@ tr:hover td {
   width: 20px;
   height: 20px;
   stroke: var(--verde);
+}
+
+/* Decorações internas da silhueta */
+.sil-tela {
+  position: absolute;
+  top: 8%;
+  left: 10%;
+  right: 10%;
+  height: 22%;
+  background: rgba(0,200,83,0.04);
+  border: 1px solid rgba(0,200,83,0.1);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.sil-botao-home {
+  position: absolute;
+  bottom: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,200,83,0.12);
+  background: rgba(0,200,83,0.04);
+  pointer-events: none;
+}
+
+.sil-linha {
+  position: absolute;
+  background: rgba(0,200,83,0.07);
+  pointer-events: none;
+}
+
+.sil-linha-h {
+  left: 8%;
+  right: 8%;
+  height: 1px;
+}
+
+.sil-linha-v {
+  top: 28%;
+  bottom: 12%;
+  width: 1px;
+  transform: translateX(-50%);
 }
 
 .painel-info-modal {

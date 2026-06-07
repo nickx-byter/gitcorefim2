@@ -122,43 +122,43 @@ document.getElementById('menuToggle').addEventListener('click', () => {
 // ============================================
 
 const componentesCelular = [
-  { 
-    id: "bateria",
-    nome: "🔋 Bateria",
-    icone: "battery",
-    imagem: "images/descarte-bateria.jpeg",
-    info: "Bateria de íon-lítio de 4000mAh. Vida útil média de 2-3 anos. ⚠️ NUNCA descarte no lixo comum! Leve a pontos de coleta especializados.",
-    top: "70%",
-    left: "50%"
-  },
-
-  { 
-    id: "processador",
-    nome: "⚙️ Processador",
-    icone: "cpu",
-    imagem: "images/descarte-processador.jpeg",
-    info: "CPU Octa-core 2.8GHz. Centro de processamento do dispositivo. Contém ouro, prata e cobre que podem ser recuperados na reciclagem.",
-    top: "40%",
-    left: "50%"
-  },
-
-  { 
+  {
     id: "camera",
     nome: "📸 Câmera",
     icone: "camera",
     imagem: "images/descarte-camera.jpeg",
     info: "Câmera principal 48MP com estabilização óptica. Componentes ópticos e sensores podem ser reaproveitados em novos dispositivos.",
-    top: "15%",
+    top: "14%",
     left: "50%"
   },
 
-  { 
+  {
+    id: "processador",
+    nome: "⚙️ Processador",
+    icone: "cpu",
+    imagem: "images/descarte-processador.jpeg",
+    info: "CPU Octa-core 2.8GHz. Centro de processamento do dispositivo. Contém ouro, prata e cobre que podem ser recuperados na reciclagem.",
+    top: "43%",
+    left: "30%"
+  },
+
+  {
+    id: "bateria",
+    nome: "🔋 Bateria",
+    icone: "battery",
+    imagem: "images/descarte-bateria.jpeg",
+    info: "Bateria de íon-lítio de 4000mAh. Vida útil média de 2-3 anos. ⚠️ NUNCA descarte no lixo comum! Leve a pontos de coleta especializados.",
+    top: "43%",
+    left: "70%"
+  },
+
+  {
     id: "altofalante",
     nome: "🔊 Alto-falante",
     icone: "speaker",
     imagem: "images/descarte-alto-falante.jpeg",
     info: "Alto-falante estéreo com certificação Hi-Res Audio. Contém ímãs de terras raras que são recicláveis.",
-    top: "85%",
+    top: "84%",
     left: "50%"
   }
 ];
@@ -204,7 +204,13 @@ function criarModal() {
         <button class="fechar-modal" id="fecharModalBtn">✕</button>
       </div>
       <div class="modal-celular-body">
-        <div id="silhuetaModal" class="celular-modal-silhueta"></div>
+        <div id="silhuetaModal" class="celular-modal-silhueta">
+          <div class="sil-tela"></div>
+          <div class="sil-botao-home"></div>
+          <div class="sil-linha sil-linha-h" style="top:28%"></div>
+          <div class="sil-linha sil-linha-h" style="top:72%"></div>
+          <div class="sil-linha sil-linha-v" style="left:50%"></div>
+        </div>
         <div id="painelInfoModal" class="painel-info-modal">
           <div class="info-placeholder">
             📱 Clique nos componentes do celular para ver informações detalhadas
