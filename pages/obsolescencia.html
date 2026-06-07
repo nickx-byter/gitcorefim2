@@ -152,15 +152,87 @@ footer{
 }
 
 .logo{
-  height:150px;          /* define altura do header da logo */
+  height:150px;
   display:flex;
   align-items:center;
 }
 
 .logo img{
-  height:100%;          /* faz a imagem caber dentro da logo */
-  max-width:200px;      /* impede de ficar gigante na largura */
-  object-fit:contain;   /* mantém proporção */
+  height:100%;
+  max-width:200px;
+  object-fit:contain;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:5px;
+  cursor:pointer;
+  background:none;
+  border:none;
+  padding:8px;
+}
+
+.menu-toggle span{
+  display:block;
+  width:25px;
+  height:2px;
+  background:white;
+  border-radius:2px;
+  transition:0.3s;
+}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+  header{
+    padding:15px 20px;
+    flex-wrap:wrap;
+  }
+
+  .logo{ height:70px; }
+
+  .menu-toggle{ display:flex; }
+
+  nav{
+    display:none;
+    width:100%;
+    flex-direction:column;
+    background:#111;
+    padding:10px 0;
+    border-top:1px solid #222;
+  }
+
+  nav.aberto{ display:flex; }
+
+  nav a{
+    padding:12px 20px;
+    margin:0;
+    border-bottom:1px solid #222;
+  }
+
+  .hero{ height:auto; padding:60px 20px; }
+
+  .hero-text h2{ font-size:26px; }
+
+  .cards{
+    grid-template-columns:1fr;
+    padding:20px;
+    gap:16px;
+  }
+
+  .card{ width:100%; }
+
+  .destaque{
+    margin:20px 16px;
+    padding:24px 20px;
+  }
+
+  .produtos{
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+  }
 }
 .produtos{
   display:grid;
@@ -232,10 +304,13 @@ footer{
   <div class="logo">
     <img src="../images/logo-trashbucket.png" alt="Logo">
   </div>
-  <nav>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="mainNav">
     <a href="../index.html">Início</a>
     <a href="./obsolescencia.html" class="ativo">Obsolescência</a>
-     <a href="./formulario.html">Formulário</a>
+    <a href="./formulario.html">Formulário</a>
     <a href="./reciclagem.html">Reciclagem</a>
     <a href="./ldpage.html">Conversa</a>
     <a href="./calculo.html">Calculadora</a>
@@ -345,6 +420,11 @@ Além disso, a conscientização da população sobre os impactos ambientais da 
 </footer>
 
 <script>
+// HAMBURGER
+document.getElementById('menuToggle').addEventListener('click', () => {
+  document.getElementById('mainNav').classList.toggle('aberto');
+});
+
 /* ANIMAÇÃO AO SCROLL */
 const elements = document.querySelectorAll('.fade-in');
 

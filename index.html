@@ -18,10 +18,13 @@
   <div class="logo">
     <img src="images/logo-trashbucket.png" alt="Logo">
   </div>
-  <nav>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="mainNav">
     <a href="index.html" class="ativo">Início</a>
     <a href="pages/obsolescencia.html">Obsolescência</a>
-     <a href="pages/formulario.html">Formulário</a>
+    <a href="pages/formulario.html">Formulário</a>
     <a href="pages/reciclagem.html">Reciclagem</a>
     <a href="pages/ldpage.html">Conversa</a>
     <a href="pages/calculo.html">Calculadora</a>
@@ -111,10 +114,14 @@
 </footer>
 
 <script>
+// HAMBURGER MENU
+document.getElementById('menuToggle').addEventListener('click', () => {
+  document.getElementById('mainNav').classList.toggle('aberto');
+});
+
 // ============================================
 // SCRIPT DO MODAL CELULAR INTERATIVO (NOVO)
 // ============================================
-// nem sei pq escolhi esse curso
 
 const componentesCelular = [
   { 

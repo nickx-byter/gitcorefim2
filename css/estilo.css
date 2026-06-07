@@ -589,3 +589,105 @@ footer {
   background: var(--header);
   margin-top: 40px;
 }
+
+/* HAMBURGER */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 8px;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: white;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  header {
+    padding: 15px 20px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .logo {
+    height: 70px;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    background: var(--header);
+    padding: 10px 0;
+    border-top: 1px solid #222;
+    gap: 0;
+  }
+
+  nav.aberto {
+    display: flex;
+  }
+
+  nav a {
+    padding: 12px 20px;
+    border-bottom: 1px solid #222;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .cards {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .tabela-descarte {
+    margin: 20px;
+    overflow-x: auto;
+  }
+
+  table {
+    min-width: 480px;
+  }
+
+  .modal-celular-body {
+    flex-direction: column;
+  }
+
+  .celular-modal-silhueta {
+    width: 200px;
+    height: 370px;
+    margin: 0 auto;
+  }
+
+  .modal-celular-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .painel-info-modal {
+    min-height: 200px;
+  }
+}

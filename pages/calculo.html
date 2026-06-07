@@ -294,6 +294,65 @@ footer{
   margin-top:50px;
 }
 
+/* HAMBURGER */
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:5px;
+  cursor:pointer;
+  background:none;
+  border:none;
+  padding:8px;
+}
+
+.menu-toggle span{
+  display:block;
+  width:25px;
+  height:2px;
+  background:white;
+  border-radius:2px;
+  transition:0.3s;
+}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+  header{
+    padding:15px 20px;
+    flex-wrap:wrap;
+  }
+
+  .logo{ height:70px; }
+
+  .menu-toggle{ display:flex; }
+
+  nav{
+    display:none;
+    width:100%;
+    flex-direction:column;
+    background:var(--header);
+    padding:10px 0;
+    border-top:1px solid #222;
+    gap:0;
+  }
+
+  nav.aberto{ display:flex; }
+
+  nav a{
+    padding:12px 20px;
+    border-bottom:1px solid #222;
+  }
+
+  .hero h1{ font-size:26px; }
+
+  .calculadora{
+    margin:20px 16px;
+    padding:24px 20px;
+  }
+
+  .aparelho-linha input{ width:60px; }
+}
+
 </style>
 </head>
 
@@ -303,7 +362,10 @@ footer{
   <div class="logo">
     <img src="../images/logo-trashbucket.png" alt="Logo">
   </div>
-  <nav>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="mainNav">
     <a href="../index.html">Início</a>
     <a href="./obsolescencia.html">Obsolescência</a>
     <a href="./formulario.html">Formulário</a>
@@ -412,8 +474,13 @@ footer{
 <footer>
   Projeto Ecolixo © 2026
 </footer>
-// nao sei como funciona, mas tá dando erro de script, então só coloquei o script aqui no final mesmo, pq se eu colocar lá em cima ele não funciona, e se eu colocar aqui embaixo ele funciona, então tá
+
 <script>
+
+// HAMBURGER
+document.getElementById('menuToggle').addEventListener('click', () => {
+  document.getElementById('mainNav').classList.toggle('aberto');
+});
 
 // Peso em gramas por unidade
 const pesos = {

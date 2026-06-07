@@ -226,8 +226,59 @@ footer{
   max-width:200px;
   object-fit:contain;
 }
+
 nav a:hover, .ativo{
   color:#00c853;
+}
+
+/* HAMBURGER */
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:5px;
+  cursor:pointer;
+  background:none;
+  border:none;
+  padding:8px;
+}
+
+.menu-toggle span{
+  display:block;
+  width:25px;
+  height:2px;
+  background:white;
+  border-radius:2px;
+  transition:0.3s;
+}
+
+/* RESPONSIVO */
+@media(max-width:900px){
+  header{
+    padding:15px 20px;
+    flex-wrap:wrap;
+  }
+
+  .logo{ height:70px; }
+
+  .menu-toggle{ display:flex; }
+
+  nav{
+    display:none;
+    width:100%;
+    flex-direction:column;
+    background:rgba(17,17,17,0.95);
+    padding:10px 0;
+    border-top:1px solid #222;
+    gap:0;
+  }
+
+  nav.aberto{ display:flex; }
+
+  nav a{
+    padding:12px 20px;
+    border-bottom:1px solid #222;
+  }
 }
 /*animaçÃo*/
 .fade-in{
@@ -268,10 +319,13 @@ nav a:hover, .ativo{
   <div class="logo">
     <img src="../images/logo-trashbucket.png" alt="Logo">
   </div>
-  <nav>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="mainNav">
     <a href="../index.html">Início</a>
     <a href="./obsolescencia.html">Obsolescência</a>
-     <a href="./formulario.html">Formulário</a>
+    <a href="./formulario.html">Formulário</a>
     <a href="./reciclagem.html">Reciclagem</a>
     <a href="./ldpage.html" class="ativo">Conversa</a>
     <a href="./calculo.html">Calculadora</a>
@@ -367,6 +421,12 @@ nav a:hover, .ativo{
 <footer>
   Projeto Ecolixo © 2026
 </footer>
+
+<script>
+document.getElementById('menuToggle').addEventListener('click', () => {
+  document.getElementById('mainNav').classList.toggle('aberto');
+});
+</script>
 
 </body>
 </html>
