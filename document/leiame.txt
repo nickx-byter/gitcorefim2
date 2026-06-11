@@ -11,7 +11,7 @@ TRASHBUCKET
 
 (02) LINK DA PUBLICAÇÃO DO PROJETO
 ------------------------------------------------------------
-(Inserir o link do GitHub Pages ou Netlify após a publicação)
+https://trashbucket.netlify.app/
 
 
 (03) PARTICIPANTES E PAPÉIS

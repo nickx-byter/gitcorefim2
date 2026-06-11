@@ -232,22 +232,8 @@
   Projeto Ecolixo © 2026 — Consciência ambiental
 </footer>
 
+<script src="../script.js"></script>
 <script>
-document.getElementById('menuToggle').addEventListener('click', () => {
-  document.getElementById('mainNav').classList.toggle('aberto');
-});
-
-const fadeEls = document.querySelectorAll('.fade-in');
-function checkFade() {
-  fadeEls.forEach(el => {
-    if (el.getBoundingClientRect().top < window.innerHeight - 60) {
-      el.classList.add('show');
-    }
-  });
-}
-window.addEventListener('scroll', checkFade);
-checkFade();
-
 const form = document.getElementById('formContato');
 const feedback = document.getElementById('feedback');
 
