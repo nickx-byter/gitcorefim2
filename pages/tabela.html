@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tabela de Descarte - TRASHBUCKET</title>
+<link rel="icon" href="../icon.png">
+<link rel="stylesheet" href="../css/glass.css">
+
+<style>
+.hero {
+  text-align: center;
+  padding: 80px 20px 50px;
+}
+.hero h1 {
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #fff 30%, var(--verde) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 14px;
+}
+.hero p {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.65;
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.tabela-wrapper {
+  max-width: 960px;
+  margin: 0 auto 60px;
+  padding: 0 24px;
+  overflow-x: auto;
+}
+
+.tabela-wrapper h2 {
+  color: var(--verde);
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--glass);
+  backdrop-filter: var(--blur);
+  -webkit-backdrop-filter: var(--blur);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  font-size: 13px;
+}
+
+thead tr {
+  background: rgba(0, 200, 83, 0.08);
+  border-bottom: 1px solid var(--verde-border);
+}
+
+thead th {
+  padding: 14px 18px;
+  text-align: left;
+  color: var(--verde);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+tbody tr {
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  transition: background 0.2s ease;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: rgba(0, 200, 83, 0.04);
+}
+
+tbody td {
+  padding: 14px 18px;
+  color: var(--text-muted);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+tbody td:first-child {
+  color: var(--text);
+  font-weight: 500;
+}
+
+.risco-alto   { color: #ff6b6b; font-weight: 600; }
+.risco-medio  { color: #ffd93d; font-weight: 600; }
+.risco-baixo  { color: var(--verde); font-weight: 600; }
+
+@media (max-width: 900px) {
+  .hero { padding: 60px 20px 40px; }
+  .hero h1 { font-size: 26px; }
+  .tabela-wrapper { padding: 0 16px; }
+  thead th, tbody td { padding: 10px 12px; font-size: 12px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">
+    <img src="../images/logo-trashbucket.png" alt="Logo">
+  </div>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+  <nav id="mainNav">
+    <a href="../index.html">Início</a>
+    <a href="./obsolescencia.html">Obsolescência</a>
+    <a href="./tabela.html" class="ativo">Tabela</a>
+    <a href="./formulario.html">Formulário</a>
+    <a href="./reciclagem.html">Reciclagem</a>
+    <a href="./ldpage.html">Conversa</a>
+    <a href="./calculo.html">Calculadora</a>
+    <a href="./membros.html">Nossa Equipe</a>
+  </nav>
+</header>
+
+<section class="hero fade-in">
+  <h1>📋 Guia de Descarte Eletrônico</h1>
+  <p>Saiba onde e como descartar cada tipo de dispositivo eletrônico de forma segura e responsável.</p>
+</section>
+
+<div class="tabela-wrapper fade-in">
+  <h2>📱 Dispositivos Móveis</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Componente</th>
+        <th>Onde descartar</th>
+        <th>Cuidados especiais</th>
+        <th>Risco ambiental</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>📱 Smartphone</td>
+        <td>Loja de operadora, pontos de coleta municipal</td>
+        <td>Apague dados pessoais antes de descartar</td>
+        <td><span class="risco-medio">Médio</span></td>
+      </tr>
+      <tr>
+        <td>📟 Tablet</td>
+        <td>Ecopontos, fabricante (programa de devolução)</td>
+        <td>Remova cartão SIM e memória</td>
+        <td><span class="risco-medio">Médio</span></td>
+      </tr>
+      <tr>
+        <td>⌚ Smartwatch</td>
+        <td>Assistências técnicas, pontos de coleta</td>
+        <td>Contém bateria de lítio — não fragmentar</td>
+        <td><span class="risco-medio">Médio</span></td>
+      </tr>
+      <tr>
+        <td>🎧 Fone de ouvido</td>
+        <td>Cooperativas de reciclagem eletrônica</td>
+        <td>Cabos com cobre têm alto valor de reciclagem</td>
+        <td><span class="risco-baixo">Baixo</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="tabela-wrapper fade-in">
+  <h2>💻 Computadores e Periféricos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Componente</th>
+        <th>Onde descartar</th>
+        <th>Cuidados especiais</th>
+        <th>Risco ambiental</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>💻 Notebook</td>
+        <td>Ecopontos, empresas de recapacitação</td>
+        <td>HD pode ser destruído ou formatado com software seguro</td>
+        <td><span class="risco-medio">Médio</span></td>
+      </tr>
+      <tr>
+        <td>🖥️ Computador (desktop)</td>
+        <td>Cooperativas de reciclagem, doação se funcional</td>
+        <td>Remova o HD para proteger dados antes de descartar</td>
+        <td><span class="risco-medio">Médio</span></td>
+      </tr>
+      <tr>
+        <td>🖨️ Impressora</td>
+        <td>Cooperativas de reciclagem</td>
+        <td>Cartuchos de tinta têm circuito contaminante — descartar separado</td>
+        <td><span class="risco-alto">Alto</span></td>
+      </tr>
+      <tr>
+        <td>🖱️ Mouse / Teclado</td>
+        <td>Pontos de coleta de eletrônicos, sucateiros</td>
+        <td>Plástico e metal podem ser separados para reciclagem</td>
+        <td><span class="risco-baixo">Baixo</span></td>
+      </tr>
+      <tr>
+        <td>🖥️ Monitor / TV</td>
+        <td>Programas de logística reversa dos fabricantes</td>
+        <td>Monitores CRT contêm chumbo — manuseio especializado obrigatório</td>
+        <td><span class="risco-alto">Alto</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="tabela-wrapper fade-in">
+  <h2>🔋 Baterias e Fontes de Energia</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Componente</th>
+        <th>Onde descartar</th>
+        <th>Cuidados especiais</th>
+        <th>Risco ambiental</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>🔋 Bateria de lítio (celular/notebook)</td>
+        <td>Supermercados, farmácias, assistências técnicas</td>
+        <td>NUNCA jogue no lixo comum — risco de incêndio e contaminação</td>
+        <td><span class="risco-alto">Alto</span></td>
+      </tr>
+      <tr>
+        <td>🔌 Carregador / cabo USB</td>
+        <td>Pontos de coleta eletrônica</td>
+        <td>Cobre nos cabos tem alto valor de reciclagem</td>
+        <td><span class="risco-baixo">Baixo</span></td>
+      </tr>
+      <tr>
+        <td>🔦 Pilhas alcalinas</td>
+        <td>Supermercados, papelarias, postos de combustível</td>
+        <td>Contêm zinco e manganês — não misturar com lixo orgânico</td>
+        <td><span class="risco-medio">Médio</span></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  Projeto Ecolixo © 2026 — Consciência ambiental
+</footer>
+
+<script>
+document.getElementById('menuToggle').addEventListener('click', () => {
+  document.getElementById('mainNav').classList.toggle('aberto');
+});
+
+const fadeEls = document.querySelectorAll('.fade-in');
+function checkFade() {
+  fadeEls.forEach(el => {
+    if (el.getBoundingClientRect().top < window.innerHeight - 60) {
+      el.classList.add('show');
+    }
+  });
+}
+window.addEventListener('scroll', checkFade);
+checkFade();
+</script>
+
+</body>
+</html>

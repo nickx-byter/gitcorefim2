@@ -1,0 +1,22 @@
+[
+  {
+    "titulo": "Metais Preciosos",
+    "icone": "🥇",
+    "texto": "Uma tonelada de celulares descartados contém mais ouro do que uma tonelada de minério de ouro."
+  },
+  {
+    "titulo": "Impacto Global",
+    "icone": "🌍",
+    "texto": "O mundo gera mais de 50 milhões de toneladas de lixo eletrônico por ano — apenas 20% é reciclado corretamente."
+  },
+  {
+    "titulo": "Recuperação de Materiais",
+    "icone": "♻️",
+    "texto": "Reciclar 1 milhão de celulares recupera cerca de 16 toneladas de cobre, 350 kg de prata e 34 kg de ouro."
+  },
+  {
+    "titulo": "Solo e Água",
+    "icone": "💧",
+    "texto": "Substâncias tóxicas do lixo eletrônico podem contaminar o solo e lençóis freáticos por décadas se descartadas incorretamente."
+  }
+]

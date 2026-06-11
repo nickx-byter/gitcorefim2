@@ -106,6 +106,7 @@
   <nav id="mainNav">
     <a href="../index.html">Início</a>
     <a href="./obsolescencia.html">Obsolescência</a>
+    <a href="./tabela.html">Tabela</a>
     <a href="./formulario.html">Formulário</a>
     <a href="./reciclagem.html" class="ativo">Reciclagem</a>
     <a href="./ldpage.html">Conversa</a>
@@ -170,6 +171,15 @@
 
 </section>
 
+<section style="padding:40px 48px 60px; max-width:960px; margin:0 auto;">
+  <h2 style="color:var(--verde); font-size:18px; font-weight:700; margin-bottom:24px; text-align:center; letter-spacing:0.01em;">
+    📊 Fatos sobre Reciclagem Eletrônica
+  </h2>
+  <div id="lista-fatos" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:16px;">
+    <p style="color:var(--text-muted); text-align:center; grid-column:1/-1;">Carregando dados...</p>
+  </div>
+</section>
+
 <footer>
   Projeto Ecolixo © 2026
 </footer>
@@ -192,6 +202,35 @@ function revelarFadeIn() {
 window.addEventListener('scroll', revelarFadeIn);
 window.addEventListener('load', revelarFadeIn);
 revelarFadeIn();
+
+async function carregarFatos() {
+  try {
+    const resposta = await fetch('../dados.json');
+    const fatos = await resposta.json();
+
+    const container = document.getElementById('lista-fatos');
+    container.innerHTML = fatos.map(f => `
+      <div style="
+        background:var(--glass); backdrop-filter:var(--blur); -webkit-backdrop-filter:var(--blur);
+        border:1px solid var(--glass-border); border-radius:var(--radius);
+        padding:24px 20px; text-align:center;
+        box-shadow:0 4px 20px rgba(0,0,0,0.2);
+        transition:all 0.25s ease;
+      "
+      onmouseover="this.style.background='var(--glass-green)';this.style.borderColor='var(--verde-border)';this.style.transform='translateY(-4px)'"
+      onmouseout="this.style.background='var(--glass)';this.style.borderColor='var(--glass-border)';this.style.transform='translateY(0)'">
+        <div style="font-size:36px; margin-bottom:10px;">${f.icone}</div>
+        <h3 style="color:var(--verde); font-size:14px; font-weight:700; margin-bottom:8px;">${f.titulo}</h3>
+        <p style="color:var(--text-muted); font-size:13px; line-height:1.6;">${f.texto}</p>
+      </div>
+    `).join('');
+  } catch (erro) {
+    document.getElementById('lista-fatos').innerHTML =
+      '<p style="color:#ff6b6b; text-align:center; grid-column:1/-1;">Erro ao carregar dados.</p>';
+  }
+}
+
+carregarFatos();
 
 function abrirMapa(){
   document.getElementById("modalMapa").style.display = "flex";
